@@ -1,0 +1,29 @@
+<!-- Scripts -->
+<script>
+    <?php
+    $page = $_GET['page'] ?? null;
+    if (!empty($page)) {
+        echo 'var page = "' . $page . '"';
+    } else {
+        echo 'var page = null';
+    }
+    ?>
+</script>
+
+<?= $this->headScript()
+    ->prependFile($this->basePath('js/custom.js'))
+    ->prependFile($this->basePath('js/datepicker/bootstrap-datepicker.js'))
+    ->prependFile($this->basePath('js/daterangepicker/daterangepicker.js'))
+    ->prependFile($this->basePath('js/moment/moment.min.js'))
+    ->prependFile($this->basePath('js/select2/js/select2.min.js'))
+    ->prependFile($this->basePath('js/fancy-box/jquery.fancybox.js'))
+    ->prependFile($this->basePath('js/jquery-maskmoney/jquery.maskMoney.min.js'))
+    ->prependFile($this->basePath('js/toastr/toastr.min.js'))
+    ->prependFile($this->basePath('js/icheck/icheck.min.js'))
+    ->prependFile('https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.min.js')
+    ->prependFile('https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js')
+    ->prependFile($this->basePath('js/bootstrap.min.js'))
+    ->prependFile($this->basePath('js/jquery.min.js'));
+?>
+
+<?= $this->inlineScript() ?>

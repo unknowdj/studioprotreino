@@ -1,0 +1,25 @@
+<?= $this->partial('site/accompaniment/nav.phtml'); ?>
+<div class="container">
+    <section id="contact">
+        <?php foreach ($this->rows as $rowName => $row): ?>
+            <?php parse_str(parse_url($row['embed'], PHP_URL_QUERY), $my_array_of_vars); ?>
+            <div class="row">
+                <a href="https://www.youtube.com/embed/<?= $my_array_of_vars['v'] ?>?autoplay=1" class="fancybox" data-fancybox-type="iframe"
+                   style="display: block;">
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+
+                        <img src="https://img.youtube.com/vi/<?= $my_array_of_vars['v'] ?>/0.jpg" alt=""
+                             class="img-responsive">
+                    </div>
+                    <div class="col-xs-10">
+                        <h4 style="font-size: 20px; color: #000;"><?= $row['title']; ?></h4>
+                        <p style="color: #939393; font-size: 12px;"><?= $row['description']; ?></p>
+                    </div>
+                </a>
+            </div>
+            <hr>
+        <?php endforeach; ?>
+    </section>
+</div>
+
+<?= $this->render('site/index/partial/footer.phtml'); ?>

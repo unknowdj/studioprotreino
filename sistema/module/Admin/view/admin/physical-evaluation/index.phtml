@@ -1,0 +1,57 @@
+<?= $this->partial('admin/partial/nav.phtml'); ?>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title <?= ($this->signatureId) ? 'pull-left' : ''; ?>">Medições</h3>
+            <?php if ($this->signatureId) { ?>
+                <a href="<?= $this->url('admin/physical-evaluation/add', ['signatureId' => $this->signatureId, 'modal' => true]); ?>"
+                   class="pull-right fancybox"
+                   data-fancybox-type="ajax">Adicionar Medição</a>
+                <div class="clearfix"></div>
+            <?php } ?>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th width="100">#</th>
+                <th>Cliente</th>
+                <th>Plano</th>
+                <th>Data</th>
+                <th>Peso</th>
+                <th>% de gordura</th>
+                <th>% de massa musc.</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($this->rows as $row) { ?>
+                <tr>
+                    <td>#<?= $this->escapeHtml($row['id']); ?></td>
+                    <td><?= $this->escapeHtml($row['customer_name']); ?></td>
+                    <td><?= $this->escapeHtml($row['plan_name']); ?></td>
+                    <td><?= $this->DateFormatHelper($this->escapeHtml($row['date'])); ?></td>
+                    <td><?= ($this->escapeHtml($row['weight'])); ?> Kg</td>
+                    <td><?= ($this->escapeHtml($row['fat_porcentage'])); ?>%</td>
+                    <td><?= ($this->escapeHtml($row['muscle_mass_porcentage'])); ?>%</td>
+                    <td>
+                        <a href="<?= $this->url('admin/physical-evaluation/edit', ['id' => $row['id'], 'modal' => true]); ?>"
+                           class="btn btn-link fancybox"
+                           data-fancybox-type="ajax">Editar</a>
+                    </td>
+                </tr>
+            <?php } ?>
+
+            <?php
+            if (!count($this->rows)) {
+                echo '<tr>';
+                echo '<td colspan="10">';
+                echo 'Nenhum registro disponível.';
+                echo '</td>';
+                echo '</tr>';
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,362 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: pro_treino\n"
+"POT-Creation-Date: 2017-02-17 12:20-0200\n"
+"PO-Revision-Date: 2017-02-17 12:20-0200\n"
+"Last-Translator: \n"
+"Language-Team: Pantone Web <contato@pantoneweb.com.br>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: module/Admin/src/Controller/AuthController.php:51
+msgid "Auth"
+msgstr "Autenticação"
+
+#: module/Admin/src/Controller/AuthController.php:71
+msgid "Welcome to  "
+msgstr "Seja bem-vindo "
+
+#: module/Admin/src/Controller/AuthController.php:75
+#: module/Admin/src/Controller/CustomerController.php:130
+#: module/Admin/src/Controller/MovieController.php:114
+#: module/Admin/src/Controller/PhysicalEvaluationController.php:131
+#: module/Admin/src/Controller/PlanController.php:114
+#: module/Admin/src/Controller/SignatureController.php:163
+#: module/Admin/src/Controller/TrainingController.php:125
+#: module/Site/src/Controller/IndexController.php:106
+#: module/Site/src/Controller/IndexController.php:200
+#: module/Site/src/Controller/LoginController.php:75
+#: module/Site/src/Controller/MyAccountController.php:107
+msgid "Attention"
+msgstr "Atenção"
+
+#: module/Admin/src/Controller/AuthController.php:77
+#: module/Admin/src/Controller/CustomerController.php:132
+#: module/Admin/src/Controller/MovieController.php:116
+#: module/Admin/src/Controller/PhysicalEvaluationController.php:133
+#: module/Admin/src/Controller/PlanController.php:116
+#: module/Admin/src/Controller/SignatureController.php:165
+#: module/Admin/src/Controller/TrainingController.php:127
+#: module/Site/src/Controller/IndexController.php:108
+#: module/Site/src/Controller/IndexController.php:202
+#: module/Site/src/Controller/LoginController.php:77
+#: module/Site/src/Controller/MyAccountController.php:109
+msgid "Error"
+msgstr "Erro"
+
+#: module/Admin/src/Controller/CustomerController.php:49
+msgid "Customer"
+msgstr "Cliente"
+
+#: module/Admin/src/Controller/CustomerController.php:68
+#: module/Admin/src/Controller/MovieController.php:68
+#: module/Admin/src/Controller/PhysicalEvaluationController.php:69
+#: module/Admin/src/Controller/PlanController.php:68
+#: module/Admin/src/Controller/SignatureController.php:86
+#: module/Admin/src/Controller/TrainingController.php:72
+#: module/Admin/src/Helper/RecursiveTrainingGridHelper.php:20
+msgid "Add"
+msgstr "Adicionar"
+
+#: module/Admin/src/Controller/CustomerController.php:79
+#: module/Admin/src/Controller/MovieController.php:79
+#: module/Admin/src/Controller/PhysicalEvaluationController.php:86
+#: module/Admin/src/Controller/PlanController.php:79
+#: module/Admin/src/Controller/SignatureController.php:109
+#: module/Admin/src/Controller/TrainingController.php:84
+msgid "Edit"
+msgstr "Editar"
+
+#: module/Admin/src/Controller/MovieController.php:49
+msgid "Movie"
+msgstr "Filmes"
+
+#: module/Admin/src/Controller/PhysicalEvaluationController.php:46
+msgid "Physical Evaluation"
+msgstr "Avaliação física"
+
+#: module/Admin/src/Controller/PlanController.php:49
+msgid "Plan"
+msgstr "Plano"
+
+#: module/Admin/src/Controller/SignatureController.php:62
+msgid "Signature"
+msgstr "Assinatura"
+
+#: module/Admin/src/Controller/SignatureController.php:111
+#: module/Site/view/site/accompaniment/chart.phtml:13
+msgid "at"
+msgstr "Até"
+
+#: module/Admin/src/Controller/TrainingController.php:53
+msgid "Training"
+msgstr "Treino"
+
+#: module/Admin/src/Form/Training/TrainingForm.php:31
+#: module/Admin/src/Helper/RecursiveTrainingGridHelper.php:19
+msgid "Name"
+msgstr "Nome"
+
+#: module/Admin/src/Form/Training/TrainingForm.php:40
+msgid "Description"
+msgstr "Descrição"
+
+#: module/Admin/src/Form/Training/TrainingForm.php:48
+msgid "Training Father"
+msgstr "Treino Pai"
+
+#: module/Admin/src/Form/Training/TrainingForm.php:53
+#: module/Admin/src/Helper/RecursiveTrainingGridHelper.php:21
+msgid "Active"
+msgstr "Ativo"
+
+#: module/Admin/src/Form/Training/TrainingForm.php:60
+msgid "Series"
+msgstr "Séries"
+
+#: module/MainClass/MainController.php:328
+msgid "Success!"
+msgstr "Sucesso!"
+
+#: module/MainClass/MainController.php:329
+msgid "The data were saved"
+msgstr "Os dados foram salvos"
+
+#: module/MainClass/MainController.php:387
+#: module/MainClass/MainController.php:414
+msgid "Form was not set"
+msgstr "Formulário não foi definido"
+
+#: module/MainClass/MainController.php:391
+#: module/MainClass/MainController.php:418
+msgid "Post was not set"
+msgstr "Post não foi definido"
+
+#: module/MainClass/MainController.php:397
+#: module/MainClass/MainController.php:424
+msgid "Invalid data"
+msgstr "Dados inválidos"
+
+#: module/MainClass/MainController.php:646
+msgid "User id not found."
+msgstr "Usuário id não foi encontrado"
+
+#: module/MainClass/MainForm.php:64 module/MainClass/MainForm.php:87
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: module/MainClass/MainForm.php:79 module/MainClass/MainForm.php:99
+msgid "Search"
+msgstr "Pesquisar"
+
+#: module/MainClass/MainForm.php:107
+msgid "Close the screen"
+msgstr "Feche a tela"
+
+#: module/MainClass/MainForm.php:126
+msgid "-"
+msgstr "-"
+
+#: module/MainClass/MainForm.php:153
+msgid "Yes"
+msgstr "Sim"
+
+#: module/MainClass/MainForm.php:154
+msgid "No"
+msgstr "Não"
+
+#: module/MainClass/MainInputFilter.php:232
+msgid "Invalid type given. String expected"
+msgstr "Tipo inválido fornecido. Seqüência de caracteres esperada"
+
+#: module/MainClass/MainInputFilter.php:233
+msgid ""
+"The input is not a valid email address. Use the basic format local-"
+"part@hostname"
+msgstr ""
+"A entrada não é um endereço de e-mail válido. Use o formato básico "
+"exemplo@exemplo.com"
+
+#: module/MainClass/MainInputFilter.php:234
+msgid "'%hostname%' is not a valid hostname for the email address"
+msgstr "'%hostname%' Não é um nome de host válido para o endereço de e-mail"
+
+#: module/MainClass/MainInputFilter.php:235
+msgid ""
+"'%hostname%' does not appear to have any valid MX or A records for the email "
+"address"
+msgstr ""
+
+#: module/MainClass/MainInputFilter.php:236
+msgid ""
+"'%hostname%' is not in a routable network segment. The email address should "
+"not be resolved from public network"
+msgstr ""
+
+#: module/MainClass/MainInputFilter.php:237
+#, php-format
+msgid "'%localPart%' can not be matched against dot-atom format"
+msgstr ""
+
+#: module/MainClass/MainInputFilter.php:238
+#, php-format
+msgid "'%localPart%' can not be matched against quoted-string format"
+msgstr ""
+
+#: module/MainClass/MainInputFilter.php:239
+msgid "'%localPart%' is not a valid local part for the email address"
+msgstr "'%localPart%' não é um e-mail válido."
+
+#: module/MainClass/MainInputFilter.php:240
+msgid "The input exceeds the allowed length"
+msgstr "A entrada excede o comprimento permitido"
+
+#: module/MainClass/MainInputFilter.php:254
+msgid "The proximity value should be numbers"
+msgstr "O valor de proximidade deve ser números"
+
+#: module/MainClass/MainInputFilter.php:274
+msgid "Invalid value"
+msgstr "Valor inválido"
+
+#: module/MainClass/MainInputFilter.php:294
+#: module/MainClass/MainInputFilter.php:316
+msgid "Invalid date"
+msgstr "Data inválida"
+
+#: module/MainClass/MainInputFilter.php:362
+msgid "Invalid hour"
+msgstr "Hora inválida"
+
+#: module/MainClass/MainInputFilter.php:380
+msgid "The input must contain only digits"
+msgstr "A entrada deve conter apenas dígitos"
+
+#: module/MainClass/MainInputFilter.php:381
+msgid "The input is an empty string"
+msgstr "A entrada é uma string vazia"
+
+#: module/MainClass/MainInputFilter.php:382
+msgid "Invalid type given. String, integer or float expected"
+msgstr "Tipo inválido fornecido."
+
+#: module/MainClass/MainInputFilter.php:394
+msgid "Value is required and can't be empty"
+msgstr "O valor é obrigatório e não pode estar em branco"
+
+#: module/MainClass/MainInputFilter.php:410
+msgid "Tell more than %min% characters"
+msgstr "Informe mais que %min% carateres"
+
+#: module/MainClass/MainInputFilter.php:411
+msgid "Maximum quantity %max% characters"
+msgstr "Quantidade máxima %max% caracteres permito"
+
+#: module/MainClass/MainInputFilter.php:425
+msgid "The input was not found in the haystack"
+msgstr "A entrada não foi encontrada no select"
+
+#: module/MainClass/MainInputFilter.php:439
+msgid "The two data tokens do not match"
+msgstr "Os dois tokens de dados não correspondem"
+
+#: module/MainClass/MainInputFilter.php:440
+msgid "No characters have been provided for"
+msgstr "Nenhum caractere foi fornecido para"
+
+#: module/Site/src/Controller/IndexController.php:94
+msgid "Purchase"
+msgstr "Comprar"
+
+#: module/Site/src/Controller/LoginController.php:71
+msgid "Welcome to "
+msgstr "Seja bem-vindo "
+
+#: module/Site/src/Controller/MyAccountController.php:46
+msgid "My Account"
+msgstr "Minha Conta"
+
+#: module/Site/src/Controller/MyAccountController.php:58
+msgid "Send"
+msgstr "Enviar"
+
+#: public/index.php:50
+msgid "Phase"
+msgstr "Fase"
+
+#: public/index.php:51
+msgid "Week"
+msgstr "Semana"
+
+#: public/index.php:52
+msgid "Charge"
+msgstr "Carga"
+
+#: public/index.php:53
+msgid "Repetition"
+msgstr "Repetição"
+
+#: module/Admin/view/admin/auth/login.phtml:4
+msgid "Restricted area"
+msgstr "Área restrita"
+
+#: module/Site/view/error/404.phtml:15
+msgid "The requested controller was unable to dispatch the request."
+msgstr "O controlador solicitado não pôde enviar a solicitação."
+
+#: module/Site/view/error/404.phtml:18
+msgid "The requested middleware was unable to dispatch the request."
+msgstr "O middleware solicitado não pôde enviar a solicitação."
+
+#: module/Site/view/error/404.phtml:21
+msgid ""
+"The requested controller could not be mapped to an existing controller class."
+msgstr ""
+"O controlador solicitado não pôde ser mapeado para uma classe de controlador "
+"existente."
+
+#: module/Site/view/error/404.phtml:24
+msgid "The requested controller was not dispatchable."
+msgstr "O controlador solicitado não foi despachável."
+
+#: module/Site/view/error/404.phtml:27
+msgid "The requested URL could not be matched by routing."
+msgstr "O URL solicitado não pode ser correspondido pelo roteamento."
+
+#: module/Site/view/error/404.phtml:30
+msgid "We cannot determine at this time why a 404 was generated."
+msgstr "Não podemos determinar neste momento por que um 404 foi gerado."
+
+#: module/Site/view/site/accompaniment/chart.phtml:13
+msgid "Its performance"
+msgstr "Seu desempenho"
+
+#: module/Site/view/site/accompaniment/chart.phtml:14
+msgid "weight"
+msgstr "Peso"
+
+#: module/Site/view/site/accompaniment/chart.phtml:15
+msgid "of fat"
+msgstr "de gordura"
+
+#: module/Site/view/site/accompaniment/chart.phtml:16
+msgid "of muscle mass"
+msgstr "de massa muscular"
+
+#: module/Site/view/site/accompaniment/chart.phtml:17
+msgid "Date"
+msgstr "Data"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "No records available."
+#~ msgstr "Não há registros disponíveis."

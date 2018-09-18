@@ -1,0 +1,5 @@
+<?php
+const PATH_TEMPLATE_ADMIN = "templates/admin/";
+const PATH_TEMPLATE_ADMIN_IMG = PATH_TEMPLATE_ADMIN . "images/";
+const PATH_TEMPLATE_ADMIN_CSS = PATH_TEMPLATE_ADMIN . "css/";
+const PATH_TEMPLATE_ADMIN_JS = PATH_TEMPLATE_ADMIN . "js/";

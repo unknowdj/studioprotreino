@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Medições</h3>
+        </div>
+        <div class="panel-body">
+            <?= $this->form(null, null)->openTag($this->form->prepare()); ?>
+            <?= $this->formRow($this->form->get('date')); ?>
+            <?= $this->formRow($this->form->get('weight')); ?>
+            <?= $this->formRow($this->form->get('fat_porcentage')); ?>
+            <?= $this->formRow($this->form->get('muscle_mass_porcentage')); ?>
+            <?= $this->render('admin/buttons.phtml'); ?>
+            <?= $this->form()->closeTag(); ?>
+        </div>
+    </div>
+</div>

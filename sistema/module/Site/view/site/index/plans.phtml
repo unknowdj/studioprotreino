@@ -1,0 +1,39 @@
+<div class="container">
+    <section class="index" id="plans">
+        <h1>PLANOS</h1>
+        <h2>Temos a opção certa para você e seu bolso</h2>
+        <div class="spacing30px"></div>
+        <?php foreach ($this->plans as $planName => $plans): ?>
+            <h3 class="black"><?= $planName ?></h3>
+            <div class="row">
+                <?php $i = 0;
+                foreach ($plans as $plan): ?>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 thumb-content">
+                        <div class="thumbnail">
+                            <h4><?= $plan['title']; ?></h4>
+                            <div class="caption <?= ($i != 0) ? 'borted' : '' ?>">
+                                <p class="thumb-price">
+                                    <?= $this->FormatMoneyHelper($plan['value']); ?>/mês
+                                </p>
+                                <p class="thumb-description">
+                                    <?= $plan['description']; ?>
+                                </p>
+                            </div>
+                            <a href="<?= $this->url('plans/purchase', ['planId' => $plan['id']]) ?>"
+                               class="btn btn-default btn-block">
+                                CONTRATAR
+                            </a>
+                        </div>
+                    </div>
+                    <?php
+                    $i++;
+                    if ($i == 3) {
+                        $i = 0;
+                    }
+                    ?>
+                <?php endforeach; ?>
+            </div>
+            <div class="spacing30px"></div>
+        <?php endforeach; ?>
+    </section>
+</div>

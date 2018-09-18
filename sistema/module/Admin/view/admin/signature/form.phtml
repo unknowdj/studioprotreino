@@ -1,0 +1,42 @@
+<?= $this->partial('admin/partial/nav.phtml'); ?>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Assinatura</h3>
+        </div>
+        <div class="panel-body">
+            <?= $this->form(null, null)->openTag($this->form->prepare()); ?>
+            <?= $this->formRow($this->form->get('plan_id')); ?>
+            <?= $this->formRow($this->form->get('customer_id')); ?>
+            <?= $this->formRow($this->form->get('date_range')); ?>
+            <?= $this->formRow($this->form->get('active')); ?>
+            <div class="page-header">
+                <h3>Material complementar</h3>
+            </div>
+
+            <!-- TAB NAVIGATION -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#trainings" role="tab" data-toggle="tab">Treinos</a></li>
+                <li><a href="#movies" role="tab" data-toggle="tab">Vídeos</a></li>
+            </ul>
+
+            <!-- TAB CONTENT -->
+            <div class="tab-content">
+                <div class="active tab-pane fade in" id="trainings">
+                    <div style="height: 100px; padding: 10px; overflow-x: auto; margin-bottom: 30px; border: 1px solid #f2f2f2;">
+                        <?= $this->formRow($this->form->get('training')); ?>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="movies">
+                    <div style="height: 100px; padding: 10px; overflow-x: auto; margin-bottom: 30px; border: 1px solid #f2f2f2;">
+                        <?= $this->formRow($this->form->get('movie')); ?>
+                    </div>
+                </div>
+            </div>
+
+            <?= $this->render('admin/buttons.phtml'); ?>
+            <?= $this->form()->closeTag(); ?>
+        </div>
+    </div>
+</div>

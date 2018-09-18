@@ -1,0 +1,21 @@
+<?= $this->partial('admin/partial/nav.phtml'); ?>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Cliente</h3>
+        </div>
+        <div class="panel-body">
+            <?= $this->form(null, null)->openTag($this->form->prepare()); ?>
+            <?= $this->formRow($this->form->get('name')); ?>
+            <?= $this->formRow($this->form->get('email')); ?>
+            <?= $this->formRow($this->form->get('password')); ?>
+            <?= $this->formRow($this->form->get('password_confirmation')); ?>
+            <?= $this->formRow($this->form->get('age')); ?>
+            <?= $this->formRow($this->form->get('height')); ?>
+            <?= $this->formRow($this->form->get('active')); ?>
+            <?= $this->render('admin/buttons.phtml'); ?>
+            <?= $this->form()->closeTag(); ?>
+        </div>
+    </div>
+</div>

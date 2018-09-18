@@ -1,0 +1,32 @@
+<div class="container">
+    <section id="contact">
+
+        <h1>Acompanhamento</h1>
+        <h2>Acesse sua área restrita para ver seu acompanhamento</h2>
+
+        <div class="spacing30px"></div>
+        <div class="spacing30px"></div>
+        <div class="spacing30px"></div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <?= $this->form(null, null)->openTag($this->form->prepare()); ?>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <?= $this->formRow($this->form->get('user')); ?>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <?= $this->formRow($this->form->get('password')); ?>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                        <?= $this->formRow($this->form->get('security')); ?>
+                        <?= $this->formRow($this->form->get('send')); ?>
+                    </div>
+                </div>
+                <?= $this->form()->closeTag(); ?>
+            </div>
+        </div>
+    </section>
+</div>

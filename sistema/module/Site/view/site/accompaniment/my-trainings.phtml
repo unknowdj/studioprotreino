@@ -1,0 +1,71 @@
+<?= $this->partial('site/accompaniment/nav.phtml'); ?>
+<section id="contact" style="margin: 0 30px;">
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <img src="/img/treino.png" alt="" style="max-width: auto; width: 100%;" class="img-responsive">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h2 style="font-size: 20px; font-weight: 600; margin: 20px 0;"><?= $this->planName; ?></h2>
+                    <p>
+                        Data de início: <?= $this->planDateInit; ?><br>
+                        Data de término: <?= $this->planDateEnd; ?>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+            <div class="table-responsive">
+                <table class="table table-bordered table-condensed">
+                    <?php if (isset($this->rows['series'])): ?>
+                        <?php foreach ($this->rows['series'] as $phase => $trainingFathers) { ?>
+                            <?php foreach ($trainingFathers as $trainingFatherId => $trainingChilds) { ?>
+                                <thead>
+                                <tr>
+                                    <th rowspan="3"
+                                        class="active"><?= $this->rows['trainingFather'][$trainingFatherId]['title']; ?></th>
+                                    <th colspan="8" class="text-right warning">Fase <?= $phase ?></th>
+                                </tr>
+                                <tr>
+                                    <?php
+                                    for ($i = 1; $i <= 4; $i++) {
+                                        echo "<td colspan='2' class=\"active text-center\" style='font-size: 12px'>Semana ${i}</td>";
+                                    }
+                                    ?>
+                                </tr>
+                                <tr>
+                                    <?php
+                                    for ($i = 1; $i <= 4; $i++) {
+                                        echo "<td class=\"active text-center\" style='font-size: 10px'>CARGA</td>";
+                                        echo "<td class=\"active text-center\" style='font-size: 10px'>REPS</td>";
+                                    }
+                                    ?>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach ($trainingChilds as $trainingChildId => $weeks) {
+                                    ksort($weeks); ?>
+                                    <tr>
+                                        <td><?= $this->rows[$trainingFatherId][$trainingChildId]['title']; ?></td>
+                                        <?php foreach ($weeks as $week => $serie) { ?>
+                                            <?= '<td>' . $serie->charge . '</td>'; ?>
+                                            <?= '<td>' . $serie->repetition . '</td>'; ?>
+                                        <?php } ?>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                                <tr>
+                                    <td colspan="10"></td>
+                                </tr>
+                            <?php } ?>
+                        <?php } ?>
+                    <?php endif; ?>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<?= $this->render('site/index/partial/footer.phtml'); ?>
+
+

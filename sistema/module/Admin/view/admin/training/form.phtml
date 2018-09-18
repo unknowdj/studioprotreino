@@ -1,0 +1,66 @@
+<?= $this->partial('admin/partial/nav.phtml'); ?>
+
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Treinos</h3>
+            </div>
+            <?= $this->form(null, null)->openTag($this->form->prepare()); ?>
+            <div class="panel-body">
+                <?= $this->formRow($this->form->get('title')); ?>
+                <?= $this->formRow($this->form->get('description')); ?>
+                <?= $this->formRow($this->form->get('training_id')); ?>
+                <?= $this->formRow($this->form->get('active')); ?>
+                <div class="series" style="display: none;">
+                    <div class="page-header">
+                        <h4>Fases</h4>
+                    </div>
+
+                    <?= $this->ItemListFormCollectionHelper($form->get('series')); ?>
+                    <div class="form-group">
+                        <button type="button" class="btn add" onclick="return add_category()">+ Adicionar nova fase
+                        </button>
+                    </div>
+                    <hr>
+                </div>
+                <?= $this->render('admin/buttons.phtml'); ?>
+            </div>
+            <?= $this->form()->closeTag(); ?>
+        </div>
+    </div>
+
+<?php
+$this->inlineScript()->captureStart();
+echo <<<JS
+    function add_category() {
+        var currentCount = $('form .phase-container').length;
+        var template = $('form .phase-container').first().clone();
+        $('form .phase-container').last().closest('.form-group').append(template);
+        $('form .phase-container').last().find('input, select').each(function (idx, inp) {
+            $(inp).attr('name', $(inp).attr('name').replace('[0]', '[' + currentCount + ']')).val('');
+        });
+        $('form .phase-container').last().find('.delete').show();
+        
+        $('.delete').on('click', function () {
+            if (confirm('Deseja remover?')) {
+                $(this).closest('.phase-container').fadeOut( "slow", function() {
+                    $(this).remove();
+                });
+            }
+        });
+            
+        return false;
+    }
+    
+    $('form .phase-container').first().find('.delete').hide();
+
+    $('[name="training_id"]').on('change', function() {
+        if($(this).val()) {
+            $('.series').fadeIn()        
+        } else {
+            $('.series').fadeOut()
+        }
+    });
+    $('[name="training_id"]').trigger('change');
+JS;
+$this->inlineScript()->captureEnd();

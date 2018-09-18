@@ -1,0 +1,44 @@
+<div class="container">
+    <section id="contact">
+        <h1>CONTRATAR</h1>
+        <h2>Temos a opção certa para você e seu bolso</h2>
+        <div class="spacing30px"></div>
+        <?= $this->form(null, null)->openTag($this->form->prepare()); ?>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <?= $this->formRow($this->form->get('name')); ?>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <?= $this->formRow($this->form->get('email')); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <?= $this->formRow($this->form->get('password')); ?>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <?= $this->formRow($this->form->get('password_confirmation')); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <?= $this->formRow($this->form->get('age')); ?>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <?= $this->formRow($this->form->get('height')); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <?= $this->formRow($this->form->get('plan_id')); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <?= $this->formRow($this->form->get('security')); ?>
+                <?= $this->formRow($this->form->get('submit')); ?>
+            </div>
+        </div>
+        <?= $this->form()->closeTag(); ?>
+    </section>
+</div>

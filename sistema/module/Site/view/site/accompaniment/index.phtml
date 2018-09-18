@@ -1,0 +1,45 @@
+<?= $this->partial('site/accompaniment/nav.phtml'); ?>
+<section id="main">
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Plano</th>
+                    <th>Período</th>
+                    <th width="100">Ativa</th>
+                    <th width="200"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($this->rows as $row) { ?>
+                    <tr>
+                        <td>#<?= $this->escapeHtml($row['id']); ?> - <?= $this->escapeHtml($row['plan_name']); ?></td>
+                        <td>
+                            Dt. Início: <?= $this->DateFormatHelper($this->escapeHtml($row['date_initial'])); ?><br>
+                            Dt. Término: <?= $this->DateFormatHelper($this->escapeHtml($row['date_end'])); ?>
+                        </td>
+                        <td><?= $this->StatusActiveHelper($this->escapeHtml($row['active'])); ?></td>
+                        <td>
+                            <a href="<?= $this->url('accompaniment/signature', ['signatureId' => $row['id']]); ?>"
+                               class="btn btn-block btn-lg btn-warning">Visualizar</a>
+                        </td>
+                    </tr>
+                <?php } ?>
+
+                <?php
+                if (!count($this->rows)) {
+                    echo '<tr>';
+                    echo '<td colspan="10">';
+                    echo 'Nenhum registro disponível.';
+                    echo '</td>';
+                    echo '</tr>';
+                }
+                ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<?= $this->render('site/index/partial/footer.phtml'); ?>

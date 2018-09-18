@@ -1,0 +1,16 @@
+<?= $this->doctype() ?>
+
+<html lang="pt-Br">
+<?= $this->render('partial/head.phtml') ?>
+<body>
+<body style="height: auto !important;">
+<style>
+    .navbar {
+        display: none;
+    }
+</style>
+<?= $this->partial('partial/show-message.phtml', ['flashMessages' => $this->flashMessages]); ?>
+<?= $this->content; ?>
+<?php echo $this->headScript()->prependFile($this->basePath('js/custom.js')); ?>
+</body>
+</html>

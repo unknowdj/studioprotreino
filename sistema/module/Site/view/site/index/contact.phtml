@@ -1,0 +1,36 @@
+<div class="container">
+    <section class="index" id="contact">
+
+        <h1>CONTATO</h1>
+        <h2>Ficou interessado? mande um e-mail para nós e responderemos em poucos minutos</h2>
+
+        <div class="spacing30px"></div>
+
+        <?= $this->form(null, null)->openTag($this->form->prepare()); ?>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <?= $this->formRow($this->form->get('name')); ?>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <?= $this->formRow($this->form->get('phone')); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <?= $this->formRow($this->form->get('service')); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <?= $this->formRow($this->form->get('security')); ?>
+                <?= $this->formRow($this->form->get('send')); ?>
+            </div>
+        </div>
+        <?= $this->form()->closeTag(); ?>
+        <div class="msg-success">
+            <p>Obrigado! Recebemos seu orçamento com sucesso, entraremos em contato em breve ;)</p>
+        </div>
+    </section>
+</div>
+
+<?= $this->render('partial/footer.phtml'); ?>

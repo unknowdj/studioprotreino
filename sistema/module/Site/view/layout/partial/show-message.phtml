@@ -1,0 +1,13 @@
+<?php
+if (isset($this->flashMessages) && !empty($this->flashMessages)):
+    foreach ($this->flashMessages as $message):
+        ?>
+        <div class="spacing30px"></div>
+        <div class="alert alert-<?= $message['type'] ?> alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h2><?= $message['title']; ?></h2>
+            <p><?= $message['message']; ?></p>
+        </div>
+        <?php
+    endforeach;
+endif;

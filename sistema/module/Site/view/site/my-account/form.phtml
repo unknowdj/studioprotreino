@@ -1,0 +1,36 @@
+<div class="container">
+    <section id="contact">
+        <a href="<?= $this->url('accompaniment') ?>" style="color: #000000; display: block;">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar
+        </a>
+        <div class="spacing30px"></div>
+        <hr>
+        <div class="spacing30px"></div>
+        <?= $this->form(null, null)->openTag($this->form->prepare()); ?>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <?= $this->formRow($this->form->get('name')); ?>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <?= $this->formRow($this->form->get('email')); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <?= $this->formRow($this->form->get('password')); ?>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <?= $this->formRow($this->form->get('password_confirmation')); ?>
+            </div>
+        </div>
+        <?= $this->formRow($this->form->get('age')); ?>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <?= $this->formRow($this->form->get('security')); ?>
+                <?= $this->formRow($this->form->get('submit')); ?>
+            </div>
+        </div>
+        <?= $this->form()->closeTag(); ?>
+    </section>
+</div>
+<?= $this->render('site/index/partial/footer.phtml'); ?>

@@ -1,0 +1,48 @@
+<?= $this->partial('site/accompaniment/nav.phtml'); ?>
+<div class="container">
+    <?php
+    if (!count($this->rows)) {
+        echo '<h2 style="width: 100%; height: 500px;">Não exitem dados a ser mostrado.</h2>';
+    } else {
+        echo '<div id="chart_div" style="width: 100%; height: 500px;"></div>';
+    }
+    ?>
+</div>
+<?php
+if (count($this->rows)) {
+    $title = $this->translate('Its performance') . ' - ' . $this->rows[0]['plan_name'] . ' (' . $this->DateFormatHelper($this->rows[0]['date_initial']) . ' ' . $this->translate('at') . ' ' . $this->DateFormatHelper($this->rows[0]['date_end']) . ')';
+    $title1 = $this->translate('weight');
+    $title2 = $this->translate('of fat');
+    $title3 = $this->translate('of muscle mass');
+    $date = $this->translate('Date');
+    $data = '';
+    foreach ($this->rows as $row) {
+        $data .= sprintf("['%s', %s, %s, %s], \n", $this->DateFormatHelper($row['date']), $row['weight'], $row['fat_porcentage'], $row['muscle_mass_porcentage']);
+    }
+    $this->inlineScript()->captureStart();
+    echo <<<JS
+    $('document').ready(function () {
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['$date', '$title1', '% $title2', '% $title3'], $data
+            ]);
+
+            var options = {
+                title: '$title',
+                hAxis: {title: '$date', titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    });
+JS;
+    $this->inlineScript()->captureEnd();
+}
+?>
+
+<?= $this->render('site/index/partial/footer.phtml'); ?>

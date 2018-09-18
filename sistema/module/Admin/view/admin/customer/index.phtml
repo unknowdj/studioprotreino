@@ -1,0 +1,52 @@
+<?= $this->partial('admin/partial/nav.phtml'); ?>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title pull-left">Clientes</h3>
+            <a href="<?= $this->url('admin/customer/add'); ?>" class="pull-right">Adicionar cliente</a>
+            <div class="clearfix"></div>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th width="100">#</th>
+                <th>Titulo</th>
+                <th width="150">Idade</th>
+                <th width="150">Peso atual</th>
+                <th width="100">Ativo</th>
+                <th width="200"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($this->rows as $row) { ?>
+                <tr>
+                    <td>#<?= $this->escapeHtml($row->id); ?></td>
+                    <td><?= $this->escapeHtml($row->name); ?></td>
+                    <td><?= $this->escapeHtml($row->age); ?> ano(s)</td>
+                    <td><?= $this->escapeHtml(round($row->height, 2)); ?> Kilos</td>
+                    <td><?= $this->StatusActiveHelper($this->escapeHtml($row->active)); ?></td>
+                    <td>
+                        <a href="<?= $this->url('admin/customer/edit', ['id' => $row->id]); ?>"
+                           class="btn btn-link">Editar</a>
+                        <a href="<?= $this->url('admin/signature/list', ['customerId' => $row->id, 'modal' => true]); ?>"
+                           class="btn btn-link fancybox"
+                           data-fancybox-type="ajax">Assinaturas</a>
+                    </td>
+                </tr>
+            <?php } ?>
+
+            <?php
+            if (!count($this->rows)) {
+                echo '<tr>';
+                echo '<td colspan="6">';
+                echo 'Nenhum registro disponível.';
+                echo '</td>';
+                echo '</tr>';
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
+
+</div>

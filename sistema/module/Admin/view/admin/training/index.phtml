@@ -1,0 +1,16 @@
+<?= $this->partial('admin/partial/nav.phtml'); ?>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title pull-left">Treinos</h3>
+            <a href="<?= $this->url('admin/training/add'); ?>" class="pull-right">Adicionar treino</a>
+            <div class="clearfix"></div>
+        </div>
+        <?php
+        $params['url_add'] = $this->url('admin/training/add');
+        $params['url_edit'] = $this->url('admin/training/edit');
+        echo $this->RecursiveTrainingGridHelper($this, 'training_id', $this->rows->toArray(), $params);
+        ?>
+    </div>
+</div>

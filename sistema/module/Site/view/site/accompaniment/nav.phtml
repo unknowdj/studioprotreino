@@ -1,0 +1,22 @@
+<div class="navbar sub-nav">
+    <ul class="nav nav-pills nav-justified">
+        <li>
+            <a href="<?= $this->url('accompaniment'); ?>">ASSINATURAS</a>
+        </li>
+        <li class="<?= (!$this->signatureId) ? 'not-active' : ''; ?>">
+            <a href="<?= ($this->signatureId) ? $this->url('accompaniment/my-trainings') : '#'; ?>">MEUS TREINOS</a>
+        </li>
+        <li class="<?= (!$this->signatureId) ? 'not-active' : ''; ?>">
+            <a href="<?= ($this->signatureId) ? $this->url('accompaniment/complementary-material') : '#'; ?>">TUTORIAIS</a>
+        </li>
+        <li class="<?= (!$this->signatureId) ? 'not-active' : ''; ?>">
+            <a href="<?= ($this->signatureId) ? $this->url('accompaniment/chart') : '#'; ?>">MINHA EVOLUÇÃO</a>
+        </li>
+    </ul>
+</div>
+<?php
+$this->inlineScript()->captureStart();
+echo <<<JS
+    $('.sub-nav a[href="' + window.location.pathname + '"]').closest('li').addClass('active');
+JS;
+$this->inlineScript()->captureEnd();

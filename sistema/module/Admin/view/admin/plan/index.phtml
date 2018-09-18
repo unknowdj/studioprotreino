@@ -1,0 +1,48 @@
+<?= $this->partial('admin/partial/nav.phtml'); ?>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title pull-left">Planos</h3>
+            <a href="<?= $this->url('admin/plan/add'); ?>" class="pull-right">Adicionar plano</a>
+            <div class="clearfix"></div>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th width="100">#</th>
+                <th>Categoria</th>
+                <th>Titulo</th>
+                <th width="150">Valor</th>
+                <th width="100">Ativo</th>
+                <th width="100"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($this->rows as $row) { ?>
+                <tr>
+                    <td>#<?= $this->escapeHtml($row['id']); ?></td>
+                    <td><?= $this->escapeHtml($row['category']); ?></td>
+                    <td><?= $this->escapeHtml($row['title']); ?></td>
+                    <td><?= $this->FormatMoneyHelper($this->escapeHtml($row['value'])); ?></td>
+                    <td><?= $this->StatusActiveHelper($this->escapeHtml($row['active'])); ?></td>
+                    <td>
+                        <a href="<?= $this->url('admin/plan/edit', ['id' => $row['id']]); ?>">Editar</a>
+                    </td>
+                </tr>
+            <?php } ?>
+
+            <?php
+            if (!count($this->rows)) {
+                echo '<tr>';
+                echo '<td colspan="10">';
+                echo 'Nenhum registro disponível.';
+                echo '</td>';
+                echo '</tr>';
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
+
+</div>
